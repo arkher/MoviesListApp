@@ -14,6 +14,10 @@ The application includes:
 - TypeScript
 - Storybook
 
+## App ilustration
+
+![](https://github.com/arkher/MoviesListApp/blob/ilustracao/project.gif)
+
 ## Features
 
 Estrututra do projeto
