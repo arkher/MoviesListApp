@@ -16,7 +16,7 @@ The application includes:
 
 ## App ilustration
 
-<img src="https://github.com/arkher/MoviesListApp/blob/ilustracao/project.gif" width="400" height="800" />
+<img src="https://github.com/arkher/MoviesListApp/blob/main/project.gif" width="400" height="800" />
 
 ## Features
 
