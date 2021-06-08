@@ -16,7 +16,7 @@ The application includes:
 
 ## App ilustration
 
-![](https://github.com/arkher/MoviesListApp/blob/ilustracao/project.gif =150x300)
+<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="40" height="40" />
 
 ## Features
 
