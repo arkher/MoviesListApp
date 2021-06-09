@@ -1,7 +1,5 @@
 # MoviesListApp
 
-[![CircleCI](https://circleci.com/gh/infinitered/ignite-bowser.svg?style=svg)](https://circleci.com/gh/infinitered/ignite-bowser)
-
 ## Infinite red Boilerplate
 
 This task was made using Ignite red's boilerplate, with some modifications to achieve the requirements.
