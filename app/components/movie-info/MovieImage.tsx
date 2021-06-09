@@ -14,7 +14,7 @@ export const MovieImage = (props: Props) => {
   const loadImageUrl = useCallback(async () => {
     try {
       const { data } = await requestFanartApi<MovieImage>(FanartEndpoints.get(movieId))
-      setImageUri(data.moviethumb[0].url)
+      setImageUri(data.moviethumb[0]?.url || data.hdmovielogo[0]?.url)
     } catch (e) {
       console.log(e)
     }
