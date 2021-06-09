@@ -18,7 +18,7 @@ The application includes:
 
 ## Features
 
-Estrututra do projeto
+Project structure
 
 ```
 ignite-project
