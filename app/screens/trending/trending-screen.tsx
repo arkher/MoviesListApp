@@ -1,29 +1,20 @@
-import React, { useCallback, useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { View } from "react-native"
 import { FlatList } from "react-native-gesture-handler"
-import { requestApi } from "../../api/trakt"
+import { useDispatch, useSelector } from "react-redux"
 import { Header, Screen, Wallpaper } from "../../components"
 import { MovieInfoContainer } from "../../components/movie-info/MovieInfoContainer"
-import { TraktEndpoints } from "../../endpoints/trakt-endpoints"
+import { fetchRequestTrending, selectTrendingMoviesState } from "../../redux/reducers/movie-reducer"
 import { color } from "../../theme"
 import { CONTAINER, FULL, HEADER_TITLE } from "./styles"
 
 export const TrendingScreen = () => {
-  // const navigation = useNavigation()
-  const [movies, setMovies] = useState<FilmContent[] | undefined>([])
-
-  const fetchMovies = useCallback(async () => {
-    try {
-      const { data } = await requestApi<FilmContent[]>(TraktEndpoints.trending.get())
-      setMovies(data)
-    } catch (error) {
-      console.log(error)
-    }
-  }, [])
+  const dispatch = useDispatch()
+  const movies = useSelector(selectTrendingMoviesState)
 
   useEffect(() => {
-    fetchMovies()
-  }, [fetchMovies])
+    dispatch(fetchRequestTrending())
+  }, [dispatch])
 
   const _renderItem = ({ item }) => (
     <MovieInfoContainer
@@ -33,7 +24,6 @@ export const TrendingScreen = () => {
       tmdbId={item.movie.ids.tmdb}
     />
   )
-
   return (
     <View testID="TrendingScreen" style={FULL}>
       <Wallpaper />
