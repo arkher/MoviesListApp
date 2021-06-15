@@ -49,38 +49,38 @@ function App() {
 
   return (
     <Provider store={createStore()}>
-      <ToggleStorybook>
-        {/* <RootStoreProvider value={rootStore}> */}
-        <SafeAreaProvider initialMetrics={initialWindowMetrics}>
-          <NavigationContainer>
-            <Tab.Navigator
-              screenOptions={({ route }) => ({
-                tabBarIcon: ({ focused, color, size }) => {
-                  let iconName
+      {/* <ToggleStorybook> */}
+      {/* <RootStoreProvider value={rootStore}> */}
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+        <NavigationContainer>
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ focused, color, size }) => {
+                let iconName
 
-                  if (route.name === "Trending") {
-                    iconName = focused ? "star" : "star-o"
-                  } else if (route.name === "Popular") {
-                    iconName = focused ? "heart" : "heart-o"
-                  }
+                if (route.name === "Trending") {
+                  iconName = focused ? "star" : "star-o"
+                } else if (route.name === "Popular") {
+                  iconName = focused ? "heart" : "heart-o"
+                }
 
-                  // You can return any component that you like here!
-                  return <Icon name={iconName} size={size} color={color} />
-                },
-              })}
-              tabBarOptions={{
-                activeTintColor: "white",
-                inactiveTintColor: "gray",
-                tabStyle: { paddingBottom: 8, backgroundColor: "black" },
-              }}
-            >
-              <Tab.Screen name="Popular" component={PopularScreen} />
-              <Tab.Screen name="Trending" component={TrendingScreen} />
-            </Tab.Navigator>
-          </NavigationContainer>
-        </SafeAreaProvider>
-        {/* </RootStoreProvider> */}
-      </ToggleStorybook>
+                // You can return any component that you like here!
+                return <Icon name={iconName} size={size} color={color} />
+              },
+            })}
+            tabBarOptions={{
+              activeTintColor: "white",
+              inactiveTintColor: "gray",
+              tabStyle: { paddingBottom: 8, backgroundColor: "black" },
+            }}
+          >
+            <Tab.Screen name="Popular" component={PopularScreen} />
+            <Tab.Screen name="Trending" component={TrendingScreen} />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
+      {/* </RootStoreProvider> */}
+      {/* </ToggleStorybook> */}
     </Provider>
   )
 }
